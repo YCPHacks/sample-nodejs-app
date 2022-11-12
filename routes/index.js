@@ -15,7 +15,7 @@ router.get('/adminRoles', (req, res) => {
     email: "admin@email.edu"
   };
 
-  res.status(200).render('adminRoles', {admin_list});
+  res.status(200).render('adminRoles', { admin_list });
 });
 
 router.get('/dashboard', (req, res, next) => {
@@ -54,7 +54,7 @@ router.get('/participantsList', (req, res) => {
     status: "Pending"
   };
 
-  res.status(200).render('participantsList', {user_list});
+  res.status(200).render('participantsList', { user_list });
 });
 
 router.get('/pastEvents', (req, res, next) => {
