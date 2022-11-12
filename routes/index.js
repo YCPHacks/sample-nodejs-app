@@ -34,6 +34,10 @@ router.get('/hardware', (req, res, next) => {
   res.status(200).render('hardware');
 });
 
+router.get('/', (req, res, next) => {
+  res.status(200).render('index');
+});
+
 router.get('/judgingCriteria', (req, res, next) => {
   res.status(200).render('judgingCriteria');
 });
