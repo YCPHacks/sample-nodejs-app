@@ -35,7 +35,7 @@ router.get('/hardware', (req, res, next) => {
 });
 
 router.get('/', (req, res, next) => {
-  res.status(200).render('index');
+  res.status(200).render('welcomePage');
 });
 
 router.get('/judgingCriteria', (req, res, next) => {
