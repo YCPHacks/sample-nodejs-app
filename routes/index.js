@@ -4,10 +4,6 @@ const users = require('./users.js');
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Express' });
-});
-
 router.get('/adminRoles', (req, res) => {
   const admin_list = {
     first: "Ralph",
@@ -15,7 +11,7 @@ router.get('/adminRoles', (req, res) => {
     email: "admin@email.edu"
   };
 
-  res.status(200).render('adminRoles', {admin_list});
+  res.status(200).render('adminRoles', { admin_list });
 });
 
 router.get('/dashboard', (req, res, next) => {
@@ -35,7 +31,7 @@ router.get('/hardware', (req, res, next) => {
 });
 
 router.get('/', (req, res, next) => {
-  res.status(200).render('index');
+  res.status(200).render('welcomePage');
 });
 
 router.get('/judgingCriteria', (req, res, next) => {
@@ -54,7 +50,7 @@ router.get('/participantsList', (req, res) => {
     status: "Pending"
   };
 
-  res.status(200).render('participantsList', {user_list});
+  res.status(200).render('participantsList', { user_list });
 });
 
 router.get('/pastEvents', (req, res, next) => {
