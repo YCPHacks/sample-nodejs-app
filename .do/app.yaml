@@ -1,0 +1,8 @@
+name: sample-nodejs-app
+services:
+- environment_slug: node-js
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: regreaves/sample-nodejs-app
+  name: sample-nodejs-app
