@@ -10,8 +10,15 @@ router.get('/', (req, res, next) => {
 
 // router.use('/users', users);
 
-router.get('/adminRoles', (req, res, next) => {
-  res.status(200).render('adminRoles');
+router.get('/adminRoles', (req, res) => {
+
+    const admin_list = {
+        first: "Ralph",
+        last: "Greaves",
+        email: "admin@email.edu"
+    };
+
+    res.status(200).render('adminRoles', {admin_list});
 });
 
 router.get('/dashboard', (req, res, next) => {
@@ -46,8 +53,16 @@ router.get('/participantDashboard', (req, res, next) => {
   res.status(200).render('participantDashboard');
 });
 
-router.get('/participantsList', (req, res, next) => {
-  res.status(200).render('participantsList');
+router.get('/participantsList', (req, res) => {
+
+    const user_list = {
+        first: "Ralph",
+        last: "Greaves",
+        created_at: "2022-10-28T14:58:13.967Z",
+        status: "Pending"
+    };
+
+    res.status(200).render('participantsList', {user_list});
 });
 
 router.get('/pastEvents', (req, res, next) => {
