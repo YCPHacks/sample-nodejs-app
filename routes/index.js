@@ -25,9 +25,9 @@ router.get('/dashboard', (req, res, next) => {
   res.status(200).render('dashboard');
 });
 
-// router.get('/error', (req, res, next) => {
-//   res.status(200).render('error');
-// });
+ router.get('/error', (req, res, next) => {
+   res.status(200).render('error');
+ });
 
 router.get('/gallery', (req, res, next) => {
   res.status(200).render('gallery');
@@ -37,17 +37,9 @@ router.get('/hardware', (req, res, next) => {
   res.status(200).render('hardware');
 });
 
-// router.get('/index', (req, res, next) => {
-//   res.status(200).render('index');
-// });
-
 router.get('/judgingCriteria', (req, res, next) => {
   res.status(200).render('judgingCriteria');
 });
-
-// router.get('/layout', (req, res, next) => {
-//   res.status(200).render('layout');
-// });
 
 router.get('/participantDashboard', (req, res, next) => {
   res.status(200).render('participantDashboard');
