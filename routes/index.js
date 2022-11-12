@@ -4,10 +4,6 @@ const users = require('./users.js');
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Express' });
-});
-
 router.get('/adminRoles', (req, res) => {
   const admin_list = {
     first: "Ralph",
