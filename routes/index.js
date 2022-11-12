@@ -8,26 +8,23 @@ router.get('/', (req, res, next) => {
   res.render('index', { title: 'Express' });
 });
 
-// router.use('/users', users);
-
 router.get('/adminRoles', (req, res) => {
+  const admin_list = {
+    first: "Ralph",
+    last: "Greaves",
+    email: "admin@email.edu"
+  };
 
-    const admin_list = {
-        first: "Ralph",
-        last: "Greaves",
-        email: "admin@email.edu"
-    };
-
-    res.status(200).render('adminRoles', {admin_list});
+  res.status(200).render('adminRoles', {admin_list});
 });
 
 router.get('/dashboard', (req, res, next) => {
   res.status(200).render('dashboard');
 });
 
- router.get('/error', (req, res, next) => {
-   res.status(200).render('error');
- });
+router.get('/error', (req, res, next) => {
+  res.status(200).render('error');
+});
 
 router.get('/gallery', (req, res, next) => {
   res.status(200).render('gallery');
@@ -46,15 +43,14 @@ router.get('/participantDashboard', (req, res, next) => {
 });
 
 router.get('/participantsList', (req, res) => {
+  const user_list = {
+    first: "Ralph",
+    last: "Greaves",
+    created_at: "2022-10-28T14:58:13.967Z",
+    status: "Pending"
+  };
 
-    const user_list = {
-        first: "Ralph",
-        last: "Greaves",
-        created_at: "2022-10-28T14:58:13.967Z",
-        status: "Pending"
-    };
-
-    res.status(200).render('participantsList', {user_list});
+  res.status(200).render('participantsList', {user_list});
 });
 
 router.get('/pastEvents', (req, res, next) => {
@@ -72,10 +68,6 @@ router.get('/polls', (req, res, next) => {
 router.get('/projectGallery', (req, res, next) => {
   res.status(200).render('projectGallery');
 });
-
-// router.get('/random', (req, res, next) => {
-//   res.status(200).render('random');
-// });
 
 router.get('/registrationSettings', (req, res, next) => {
   res.status(200).render('registrationSettings');
