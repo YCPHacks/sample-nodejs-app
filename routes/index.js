@@ -85,6 +85,10 @@ router.get('/teamManager', (req, res, next) => {
   res.status(200).render('teamManager');
 });
 
+router.get('/pollView', (req, res) => {
+    res.status(200).render('pollView');
+});
+
 router.get('/teamSettings', (req, res, next) => {
   res.status(200).render('teamSettings');
 });
