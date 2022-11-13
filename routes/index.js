@@ -1,5 +1,7 @@
 const express = require('express');
 
+const auth = require('express-openid-connect').auth();
+
 const users = require('./users.js');
 
 const router = express.Router();
