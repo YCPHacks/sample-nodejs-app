@@ -9,12 +9,12 @@ body
         hr
       .container1
         mixin user(u)
-        form
-          span= u.name
+          form
+            span= u.name
 
-          select(name=`${u.name}`)
-            option(value="user" selected=(u.role === "")) user
-            option(value="admin" selected=(u.role === "rol_Rtjhdoi7zz7wOjXX")) administrator
+            select(name=`${u.name}`)
+              option(value="user" selected=(u.role === "")) user
+              option(value="admin" selected=(u.role === "rol_Rtjhdoi7zz7wOjXX")) administrator
 
           input(type="submit")
 
