@@ -1,25 +1,8 @@
 const express = require('express');
 
-// const { auth } = require('express-openid-connect');
-
-const { auth, requiredScopes } = require('express-oauth2-jwt-bearer');
-
-
 const users = require('./users.js');
 
 const router = express.Router();
-
-/*
-router.use(
-  auth({
-    authorizationParams: {
-      response_type: 'code',
-      audience: 'http://localhost:3000',
-      scope: 'openid profile email read:messages offline_access'
-    }
-  })
-);
-*/
 
 router.get('/adminRoles', (req, res) => {
   const admin_list = {
