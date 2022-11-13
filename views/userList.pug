@@ -3,16 +3,20 @@ head
   link(rel='icon', type='image/x-icon', href='/static/images/favicon.png')
 body
   include includes/navbar.pug
+  include includes/dashboardBar.pug
 
-  mixin user(u)
-    form
-      span= u.name
+      .display-5 User List
+	    hr
+	  .container1
+        mixin user(u)
+        form
+          span= u.name
 
-      select(name=`${u.name}`)
-        option(value="user" selected=(u.role === "")) user
-        option(value="admin" selected=(u.role === "rol_Rtjhdoi7zz7wOjXX")) administrator
+          select(name=`${u.name}`)
+            option(value="user" selected=(u.role === "")) user
+            option(value="admin" selected=(u.role === "rol_Rtjhdoi7zz7wOjXX")) administrator
 
-      input(type="submit")
+          input(type="submit")
 
-  each u of users
-    +user(u)
+      each u of users
+        +user(u)
