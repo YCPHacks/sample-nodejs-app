@@ -1,6 +1,6 @@
 const express = require('express');
 
-const auth = require('express-openid-connect').auth();
+const { auth } = require('express-openid-connect');
 
 const users = require('./users.js');
 
