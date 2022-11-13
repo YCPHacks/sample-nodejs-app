@@ -98,7 +98,15 @@ router.get('/teams', (req, res, next) => {
 });
 
 router.get('/userList', (req, res, next) => {
-  res.status(200).render('userList');
+  const users = [
+    { name: "Brady", role: "rol_Rtjhdoi7zz7wOjXX" },
+    { name: "Derek", role: "" },
+    { name: "Josh", role: "" },
+    { name: "Kayla", role: "rol_Rtjhdoi7zz7wOjXX" },
+    { name: "Ralph", role: "" }
+  ];
+
+  res.status(200).render('userList', { users });
 });
 
 router.get('/welcomePage', (req, res, next) => {

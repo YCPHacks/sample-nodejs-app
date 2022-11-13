@@ -1,8 +1,18 @@
-html
-  head
-    link(rel='icon', type='image/x-icon', href='/static/images/favicon.png')
-  body
-   include includes/navbar.pug
-   block content
-       p= created_at
-       p= email
+doctype html
+head
+  link(rel='icon', type='image/x-icon', href='/static/images/favicon.png')
+body
+  h3 Users
+
+  mixin user(u)
+    form
+      span= u.name
+
+      select(name=`${u.name}`)
+        option(value="user" selected=(u.role === "")) user
+        option(value="admin" selected=(u.role === "rol_Rtjhdoi7zz7wOjXX")) administrator
+
+      input(type="submit")
+
+  each u of users
+    +user(u)
