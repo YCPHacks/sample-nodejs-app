@@ -4,5 +4,5 @@ services:
   github:
     branch: main
     deploy_on_push: true
-    repo: YCPHacks/sample-nodejs-app
+    repo: regreaves/sample-nodejs-app
   name: sample-nodejs-app
