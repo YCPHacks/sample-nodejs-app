@@ -4,9 +4,19 @@ const path = require('path');
 const express = require('express');
 const logger = require('morgan');
 
+const helmet = require('helmet');
+
 const indexRouter = require('./routes/index');
 
 const app = express();
+
+app.use(helmet.crossOriginResourcePolicy());
+app.use(helmet.hidePoweredBy());
+app.use((req, res, next) => {
+  res.set('Permissions-Policy', 'geolocation=(), microphone=()');
+
+  next();
+});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
