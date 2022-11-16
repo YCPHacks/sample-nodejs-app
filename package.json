@@ -13,7 +13,6 @@
     "express-oauth2-jwt-bearer": "1.2.0",
     "express-openid-connect": "2.10.0",
     "helmet": "6.0.0",
-    "http-errors": "~1.6.3",
     "md5": "^2.2.1",
     "mersenne-twister": "^1.1.0",
     "morgan": "~1.9.1",
