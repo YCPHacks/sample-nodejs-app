@@ -11,7 +11,7 @@ router.use(
   })
 );
 
-router.get('/', async (req, res) => {
+router.get('/test', async (req, res) => {
   const userInfo = await req.oidc.fetchUserInfo();
   res.send(`hello ${userInfo.sub}`);
 });
