@@ -25,6 +25,16 @@ router.get('/', function (req, res, next) {
 });
 */
 
+router.use(
+  auth({
+    authorizationParams: {
+      response_type: 'code',
+      audience: process.env.AUDIENCE,
+      scope: 'openid profile email read:messages offline_access'
+    }
+  })
+);
+
 router.get('/test', requiresAuth(), (req, res, next) => {
   res.status(200).send(req.oidc.user);
 });
