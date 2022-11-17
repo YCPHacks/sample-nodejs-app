@@ -7,15 +7,16 @@ const router = express();
 router.use(
   auth({
     authorizationParams: {
-      response_type: 'code'
+      response_type: 'code',
+      scope: 'openid profile email read:messages offline_access'
     }
   })
 );
 
-router.get('/test', async (req, res) => {
+router.get('/test', /* requiresAuth(),*/ async (req, res, next) => {
   const userInfo = await req.oidc.fetchUserInfo();
 
-  res.status(200).send(`<pre>${userInfo}</pre>`);
+  res.status(200).render('test', { userInfo });
 });
 
 module.exports = router;
