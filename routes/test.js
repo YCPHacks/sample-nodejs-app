@@ -1,20 +1,19 @@
 const express = require('express');
+const { auth } = require('express-openid-connect');
 
-const { auth, requiresAuth } = require('express-openid-connect');
-
-const router = express.Router();
+const router = express();
 
 router.use(
   auth({
     authorizationParams: {
-      response_type: 'code',
-      scope: 'openid profile email read:messages offline_access'
+      response_type: 'code'
     }
   })
 );
 
-router.get('/test', requiresAuth(), (req, res, next) => {
-  res.status(200).send(req.oidc.user);
+router.get('/', async (req, res) => {
+  const userInfo = await req.oidc.fetchUserInfo();
+  res.send(`hello ${userInfo.sub}`);
 });
 
 module.exports = router;
