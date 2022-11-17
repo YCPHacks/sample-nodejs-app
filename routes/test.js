@@ -12,7 +12,7 @@ module.exports = router;
 
 const express = require('express');
 
-const { requiresAuth } = require('express-openid-connect');
+const { auth, requiresAuth } = require('express-openid-connect');
 
 const router = express.Router();
 
