@@ -1,4 +1,5 @@
 const express = require('express');
+
 const { auth } = require('express-openid-connect');
 
 const router = express();
@@ -13,7 +14,8 @@ router.use(
 
 router.get('/test', async (req, res) => {
   const userInfo = await req.oidc.fetchUserInfo();
-  res.send(`hello ${userInfo.sub}`);
+
+  res.status(200).send(`<pre>${userInfo}</pre>`);
 });
 
 module.exports = router;
