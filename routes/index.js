@@ -6,8 +6,9 @@ const router = express();
 
 router.use(
   auth({
+    authRequired: false,
+    auth0Logout: true,
     authorizationParams: {
-      authRequired: false,
       response_type: 'code',
       scope: 'openid profile email read:messages offline_access'
     }
