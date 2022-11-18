@@ -28,7 +28,7 @@ router.get('/adminRoles', (req, res, next) => {
 router.get('/dashboard', (req, res, next) => {
   const isAuthenticated = req.oidc.isAuthenticated();
 
-  res.status(200).render('dashboard', { isAuthenticated });});
+  res.status(200).render('dashboard', { isAuthenticated });
 
 router.get('/error', (req, res, next) => {
   res.status(200).render('error');
