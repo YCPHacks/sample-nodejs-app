@@ -15,12 +15,6 @@ router.use(
   })
 );
 
-router.get((req, res, next) => {
-  res.locals.isAuthenticated = req.oidc.isAuthenticated();
-
-  next();
-});
-
 router.get('/adminRoles', (req, res, next) => {
   const admin_list = {
     first: "Ralph",
@@ -40,7 +34,9 @@ router.get('/error', (req, res, next) => {
 });
 
 router.get('/gallery', requiresAuth(), (req, res, next) => {
-  res.status(200).render('gallery');
+  const isAuthenticated = req.oidc.isAuthenticated();
+
+  res.status(200).render('gallery', { isAuthenticated });
 });
 
 router.get('/hardware', (req, res, next) => {
