@@ -85,7 +85,6 @@ button.rightArrow{
     animation-iteration-count: infinite;
     /*animation-timing-function: linear;*/
     animation-direction: alternate;
-
 }
 
 .center:hover{
@@ -93,8 +92,7 @@ button.rightArrow{
     animation-timing-function: ease-in-out;
     cursor: pointer;
 }
-
-img {
+ .sponsorImage{
     position:relative;
     display: inline-block;
     margin: 2em;
