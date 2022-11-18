@@ -15,7 +15,13 @@ router.use(
   })
 );
 
-router.get('/adminRoles', (req, res) => {
+router.get((req, res, next) => {
+  res.locals.isAuthenticated = req.oidc.isAuthenticated();
+
+  next();
+});
+
+router.get('/adminRoles', (req, res, next) => {
   const admin_list = {
     first: "Ralph",
     last: "Greaves",
@@ -53,7 +59,7 @@ router.get('/participantDashboard', (req, res, next) => {
   res.status(200).render('participantDashboard');
 });
 
-router.get('/participantsList', (req, res) => {
+router.get('/participantsList', (req, res, next) => {
   const user_list = {
     first: "Ralph",
     last: "Greaves",
@@ -102,7 +108,7 @@ router.get('/test', requiresAuth(), async (req, res, next) => {
   res.status(200).render('test', { userInfo });
 });
 
-router.get('/pollView', (req, res) => {
+router.get('/pollView', (req, res, next) => {
     res.status(200).render('pollView');
 });
 
