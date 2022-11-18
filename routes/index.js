@@ -1,6 +1,18 @@
 const express = require('express');
 
-const router = express.Router();
+const { auth, requiresAuth } = require('express-openid-connect');
+
+const router = express();
+
+router.use(
+  auth({
+    authorizationParams: {
+      authRequired: false,
+      response_type: 'code',
+      scope: 'openid profile email read:messages offline_access'
+    }
+  })
+);
 
 router.get('/adminRoles', (req, res) => {
   const admin_list = {
@@ -81,6 +93,12 @@ router.get('/teamManagement', (req, res, next) => {
 
 router.get('/teamManager', (req, res, next) => {
   res.status(200).render('teamManager');
+});
+
+router.get('/test', requiresAuth(), async (req, res, next) => {
+  const userInfo = await req.oidc.fetchUserInfo();
+
+  res.status(200).render('test', { userInfo });
 });
 
 router.get('/pollView', (req, res) => {
