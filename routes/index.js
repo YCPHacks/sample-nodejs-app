@@ -101,9 +101,9 @@ router.get('/teamManager', (req, res, next) => {
 });
 
 router.get('/test', requiresAuth(), async (req, res, next) => {
-  const userInfo = await req.oidc.fetchUserInfo();
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
 
-  res.status(200).render('test', { userInfo });
+  res.status(200).render('test');
 });
 
 router.get('/pollView', (req, res, next) => {
