@@ -13,7 +13,7 @@ router.use(
   })
 );
 
-router.get('/test', /* requiresAuth(),*/ async (req, res, next) => {
+router.get('/test', async (req, res, next) => {
   const userInfo = await req.oidc.fetchUserInfo();
 
   res.status(200).render('test', { userInfo });
