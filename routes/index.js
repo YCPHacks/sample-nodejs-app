@@ -39,7 +39,7 @@ router.get('/error', (req, res, next) => {
   res.status(200).render('error');
 });
 
-router.get('/gallery', (req, res, next) => {
+router.get('/gallery', requiresAuth(), (req, res, next) => {
   res.status(200).render('gallery');
 });
 

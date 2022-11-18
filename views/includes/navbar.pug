@@ -39,10 +39,13 @@ html
               a.account.d-flex.align-items-center.text-white.text-decoration-none.dropdown-toggle(href='#', data-bs-toggle='dropdown', aria-expanded='false')
                   img.rounded-circle.me-2(src='/static/images/derek.png', alt='', width='32', height='32')
 
-                  if isAuthenticated
-                    p authenticated
-                  else
-                    p not authenticated
+              mixin authentication-button(isAuthenticated)
+                if isAuthenticated
+                  p authenticated
+                else
+                  p not authenticated
+
+              +authentication-button(isAuthenticated)
 
                   strong admin
               ul.dropdown-menu.dropdown-menu-light.text-small.shadow
