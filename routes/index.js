@@ -26,20 +26,19 @@ router.get('/adminRoles', requiresAuth(), async (req, res, next) => {
   res.status(200).render('adminRoles', { admin_list });
 });
 
+// Doesn't work, removed the isAuthenticated, rerun
 router.get('/dashboard', requiresAuth(), async (req, res, next) => {
   res.locals.userInfo = await req.oidc.fetchUserInfo();
-  
-  res.status(200).render('dashboard', { isAuthenticated });
+
+  res.status(200).render('dashboard');
 });
 
 router.get('/error', (req, res, next) => {
   res.status(200).render('error');
 });
 
-router.get('/gallery', requiresAuth(), (req, res, next) => {
-  const isAuthenticated = req.oidc.isAuthenticated();
-
-  res.status(200).render('gallery', { isAuthenticated });
+router.get('/gallery', (req, res, next) => {
+  res.status(200).render('gallery');
 });
 
 router.get('/hardware', (req, res, next) => {
@@ -82,6 +81,12 @@ router.get('/pollResults', requiresAuth(), async (req, res, next) => {
   res.status(200).render('pollResults');
 });
 
+router.get('/pollView', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
+  res.status(200).render('pollView');
+});
+
 router.get('/polls', requiresAuth(), async (req, res, next) => {
   res.locals.userInfo = await req.oidc.fetchUserInfo();
 
@@ -120,12 +125,6 @@ router.get('/test', requiresAuth(), async (req, res, next) => {
   res.locals.userInfo = await req.oidc.fetchUserInfo();
 
   res.status(200).render('test');
-});
-
-router.get('/pollView', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
-  res.status(200).render('pollView');
 });
 
 router.get('/teamSettings', requiresAuth(), async (req, res, next) => {
