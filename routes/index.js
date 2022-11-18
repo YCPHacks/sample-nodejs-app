@@ -15,19 +15,20 @@ router.use(
   })
 );
 
-router.get('/adminRoles', (req, res, next) => {
+router.get('/adminRoles', requiresAuth(), async (req, res, next) => {
   const admin_list = {
     first: "Ralph",
     last: "Greaves",
     email: "admin@email.edu"
   };
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
 
   res.status(200).render('adminRoles', { admin_list });
 });
 
-router.get('/dashboard', (req, res, next) => {
-  const isAuthenticated = req.oidc.isAuthenticated();
-
+router.get('/dashboard', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+  
   res.status(200).render('dashboard', { isAuthenticated });
 });
 
@@ -53,17 +54,20 @@ router.get('/judgingCriteria', (req, res, next) => {
   res.status(200).render('judgingCriteria');
 });
 
-router.get('/participantDashboard', (req, res, next) => {
+router.get('/participantDashboard', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
   res.status(200).render('participantDashboard');
 });
 
-router.get('/participantsList', (req, res, next) => {
+router.get('/participantsList', requiresAuth(), async (req, res, next) => {
   const user_list = {
     first: "Ralph",
     last: "Greaves",
     created_at: "2022-10-28T14:58:13.967Z",
     status: "Pending"
   };
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
 
   res.status(200).render('participantsList', { user_list });
 });
@@ -72,19 +76,25 @@ router.get('/pastEvents', (req, res, next) => {
   res.status(200).render('pastEvents');
 });
 
-router.get('/pollResults', (req, res, next) => {
+router.get('/pollResults', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
   res.status(200).render('pollResults');
 });
 
-router.get('/polls', (req, res, next) => {
+router.get('/polls', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
   res.status(200).render('polls');
 });
 
-router.get('/projectGallery', (req, res, next) => {
+router.get('/projectGallery', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
   res.status(200).render('projectGallery');
 });
 
-router.get('/registrationSettings', (req, res, next) => {
+router.get('/registrationSettings', requiresAuth(), async (req, res, next) => {
   res.status(200).render('registrationSettings');
 });
 
