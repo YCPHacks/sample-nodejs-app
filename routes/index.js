@@ -16,7 +16,7 @@ router.use(
 );
 
 router.use((req, res, next) => {
-  const isAuthenticated = req.oidc.isAuthenticated();
+  res.locals.isAuthenticated = req.oidc.isAuthenticated();
 
   next();
 });
