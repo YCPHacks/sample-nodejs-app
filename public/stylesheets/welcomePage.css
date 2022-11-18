@@ -101,7 +101,7 @@ button.rightArrow{
     height: auto;
 }
 
-img:hover{
+.sponsorImage:hover{
     transform: scale(1.5);
 }
 
