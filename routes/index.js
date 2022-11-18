@@ -15,6 +15,12 @@ router.use(
   })
 );
 
+router.use((req, res, next) => {
+  const isAuthenticated = req.oidc.isAuthenticated();
+
+  next();
+});
+
 router.get('/adminRoles', (req, res, next) => {
   const admin_list = {
     first: "Ralph",
@@ -26,7 +32,7 @@ router.get('/adminRoles', (req, res, next) => {
 });
 
 router.get('/dashboard', (req, res, next) => {
-  res.status(200).render('dashboard');
+  res.status(200).render('dashboard', { isAuthenticated });
 });
 
 router.get('/error', (req, res, next) => {
@@ -34,8 +40,6 @@ router.get('/error', (req, res, next) => {
 });
 
 router.get('/gallery', requiresAuth(), (req, res, next) => {
-  const isAuthenticated = req.oidc.isAuthenticated();
-
   res.status(200).render('gallery', { isAuthenticated });
 });
 
