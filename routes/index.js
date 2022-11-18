@@ -32,7 +32,7 @@ router.get('/adminRoles', (req, res, next) => {
 });
 
 router.get('/dashboard', (req, res, next) => {
-  res.status(200).render('dashboard', { isAuthenticated });
+  res.status(200).render('dashboard', { res.locals.isAuthenticated });
 });
 
 router.get('/error', (req, res, next) => {
@@ -40,7 +40,7 @@ router.get('/error', (req, res, next) => {
 });
 
 router.get('/gallery', requiresAuth(), (req, res, next) => {
-  res.status(200).render('gallery', { isAuthenticated });
+  res.status(200).render('gallery', { res.locals.isAuthenticated });
 });
 
 router.get('/hardware', (req, res, next) => {
