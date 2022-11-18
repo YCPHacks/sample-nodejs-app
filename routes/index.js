@@ -26,7 +26,6 @@ router.get('/adminRoles', requiresAuth(), async (req, res, next) => {
   res.status(200).render('adminRoles', { admin_list });
 });
 
-// Doesn't work, removed the isAuthenticated, rerun
 router.get('/dashboard', requiresAuth(), async (req, res, next) => {
   res.locals.userInfo = await req.oidc.fetchUserInfo();
 
