@@ -88,15 +88,21 @@ router.get('/registrationSettings', (req, res, next) => {
   res.status(200).render('registrationSettings');
 });
 
-router.get('/sponsor', (req, res, next) => {
+router.get('/sponsor', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
   res.status(200).render('sponsor');
 });
 
-router.get('/teamManagement', (req, res, next) => {
+router.get('/teamManagement', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
   res.status(200).render('teamManagement');
 });
 
-router.get('/teamManager', (req, res, next) => {
+router.get('/teamManager', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
   res.status(200).render('teamManager');
 });
 
@@ -106,23 +112,31 @@ router.get('/test', requiresAuth(), async (req, res, next) => {
   res.status(200).render('test');
 });
 
-router.get('/pollView', (req, res, next) => {
-    res.status(200).render('pollView');
+router.get('/pollView', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
+  res.status(200).render('pollView');
 });
 
-router.get('/teamSettings', (req, res, next) => {
+router.get('/teamSettings', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
   res.status(200).render('teamSettings');
 });
 
-router.get('/teamView', (req, res, next) => {
+router.get('/teamView', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
   res.status(200).render('teamView');
 });
 
-router.get('/teams', (req, res, next) => {
+router.get('/teams', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
   res.status(200).render('teams');
 });
 
-router.get('/userList', (req, res, next) => {
+router.get('/userList', requiresAuth(), async (req, res, next) => {
   const users = [
     { name: "Brady", role: "rol_Rtjhdoi7zz7wOjXX" },
     { name: "Derek", role: "" },
@@ -130,6 +144,7 @@ router.get('/userList', (req, res, next) => {
     { name: "Kayla", role: "rol_Rtjhdoi7zz7wOjXX" },
     { name: "Ralph", role: "" }
   ];
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
 
   res.status(200).render('userList', { users });
 });
