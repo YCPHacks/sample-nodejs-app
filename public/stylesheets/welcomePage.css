@@ -92,7 +92,7 @@ button.rightArrow{
     animation-timing-function: ease-in-out;
     cursor: pointer;
 }
- .sponsorImage{
+.sponsorImage {
     position:relative;
     display: inline-block;
     margin: 2em;
