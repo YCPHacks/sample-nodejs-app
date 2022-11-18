@@ -45,7 +45,7 @@ html
                 else
                   p not authenticated
 
-              +authentication-button(isAuthenticated)
+              +authentication-button(res.locals.isAuthenticated)
 
                   strong admin
               ul.dropdown-menu.dropdown-menu-light.text-small.shadow
