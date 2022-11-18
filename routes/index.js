@@ -15,12 +15,6 @@ router.use(
   })
 );
 
-router.use((req, res, next) => {
-  res.locals.isAuthenticated = req.oidc.isAuthenticated();
-
-  next();
-});
-
 router.get('/adminRoles', (req, res, next) => {
   const admin_list = {
     first: "Ralph",
@@ -32,15 +26,18 @@ router.get('/adminRoles', (req, res, next) => {
 });
 
 router.get('/dashboard', (req, res, next) => {
-  res.status(200).render('dashboard', { res.locals.isAuthenticated });
-});
+  const isAuthenticated = req.oidc.isAuthenticated();
+
+  res.status(200).render('dashboard', { isAuthenticated });});
 
 router.get('/error', (req, res, next) => {
   res.status(200).render('error');
 });
 
 router.get('/gallery', requiresAuth(), (req, res, next) => {
-  res.status(200).render('gallery', { res.locals.isAuthenticated });
+  const isAuthenticated = req.oidc.isAuthenticated();
+
+  res.status(200).render('gallery', { isAuthenticated });
 });
 
 router.get('/hardware', (req, res, next) => {
