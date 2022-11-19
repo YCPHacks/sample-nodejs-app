@@ -40,7 +40,8 @@ html
                         |
                         .btn-group
                             button.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', data-bs-display='static', aria-expanded='false')
-                                img.rounded-circle.me-2(src='/static/images/derek.png', alt='', width='32', height='32')
+                                if (userInfo)
+                                    img(src=userInfo['picture'] referrerpolicy="no-referrer")
                             ul.dropdown-menu.dropdown-menu-end
                                 li
                                     a.dropdown-item(href='#') Profile
