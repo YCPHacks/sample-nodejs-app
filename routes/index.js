@@ -15,7 +15,7 @@ router.use(
   })
 );
 
-router.use((req, res, next) => {
+router.use(async (req, res, next) => {
   res.locals.isAuthenticated = req.oidc.isAuthenticated();
 
   if (res.locals.isAuthenticated) {
