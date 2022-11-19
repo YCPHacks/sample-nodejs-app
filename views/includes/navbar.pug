@@ -42,16 +42,19 @@ html
                             button.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', data-bs-display='static', aria-expanded='false')
                                 if (userInfo)
                                     img(src=userInfo['picture'], referrerpolicy="no-referrer", width='30', height='30')
-                                else
-                                    a.link-secondary Login
 
-                            ul.dropdown-menu.dropdown-menu-end
-                                li
-                                    a.dropdown-item(href='#') Profile
-                                li
-                                    a.dropdown-item(href='/dashboard') Dashboard
-                                li
-                                    hr.dropdown-divider
-                                li
-                                    a.dropdown-item(href='/logout') Sign out
+                                    ul.dropdown-menu.dropdown-menu-end
+                                        li
+                                            a.dropdown-item(href='#') Profile
+                                        li
+                                            a.dropdown-item(href='/dashboard') Dashboard
+                                        li
+                                            hr.dropdown-divider
+                                        li
+                                            a.dropdown-item(href='/logout') Sign out
+
+                                else
+                                    a.link-light Login
+
+
 
