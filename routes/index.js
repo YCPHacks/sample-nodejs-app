@@ -15,6 +15,12 @@ router.use(
   })
 );
 
+router.use((req, res, next) => {
+  res.locals.isAuthenticated = req.oidc.isAuthenticated();
+
+  next();
+});
+
 router.get('/adminRoles', requiresAuth(), async (req, res, next) => {
   const admin_list = {
     first: "Ralph",
