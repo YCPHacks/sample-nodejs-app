@@ -33,6 +33,7 @@ router.get('/dashboard', requiresAuth(), async (req, res, next) => {
   res.status(200).render('dashboard');
 });
 
+// Profile image for users
 router.get('/navbar', requiresAuth(), async (req, res, next) => {
   res.locals.userInfo = await req.oidc.fetchUserInfo();
 
