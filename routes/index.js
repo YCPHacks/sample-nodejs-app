@@ -33,6 +33,12 @@ router.get('/dashboard', requiresAuth(), async (req, res, next) => {
   res.status(200).render('dashboard');
 });
 
+router.get('/navbar', requiresAuth(), async (req, res, next) => {
+  res.locals.userInfo = await req.oidc.fetchUserInfo();
+
+  res.status(200).render('navbar');
+});
+
 router.get('/error', (req, res, next) => {
   res.status(200).render('error');
 });
