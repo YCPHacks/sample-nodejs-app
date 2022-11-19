@@ -38,10 +38,10 @@ html
                         li.nav-item
                             a.navbarLink.nav-link(href='pastEvents') Past Events
                         |
-                        if (userInfo)
+                        if (isAuthenticated)
                             .btn-group
-                                button.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', data-bs-display='static', aria-expanded='false')
-                                    img(src=userInfo['picture'], referrerpolicy="no-referrer", width='30', height='30')
+                                //button.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', data-bs-display='static', aria-expanded='false')
+                                //    img(src=userInfo['picture'], referrerpolicy="no-referrer", width='30', height='30')
                                 ul.dropdown-menu.dropdown-menu-end
                                     li
                                         a.dropdown-item(href='#') Profile
@@ -52,7 +52,7 @@ html
                                     li
                                         a.dropdown-item(href='/logout') Sign out
                         else
-                            a.link-light.text-decoration-none.btn-outline-light(href='/login') Log in
+                            a.btn.link-light.text-decoration-none.btn-outline-light(href='/login') Log in
 
 
 
