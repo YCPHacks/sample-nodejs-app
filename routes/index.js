@@ -18,6 +18,10 @@ router.use(
 router.use((req, res, next) => {
   res.locals.isAuthenticated = req.oidc.isAuthenticated();
 
+  if (res.locals.isAuthenticated) {
+    res.locals.userInfo = await req.oidc.fetchUserInfo();
+  }
+
   next();
 });
 
@@ -27,22 +31,17 @@ router.get('/adminRoles', requiresAuth(), async (req, res, next) => {
     last: "Greaves",
     email: "admin@email.edu"
   };
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
 
   res.status(200).render('adminRoles', { admin_list });
 });
 
 // Doesn't work, removed the isAuthenticated, rerun
 router.get('/dashboard', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('dashboard');
 });
 
 // Profile image for users
 router.get('/navbar', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('navbar');
 });
 
@@ -67,8 +66,6 @@ router.get('/judgingCriteria', (req, res, next) => {
 });
 
 router.get('/participantDashboard', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('participantDashboard');
 });
 
@@ -79,8 +76,6 @@ router.get('/participantsList', requiresAuth(), async (req, res, next) => {
     created_at: "2022-10-28T14:58:13.967Z",
     status: "Pending"
   };
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('participantsList', { user_list });
 });
 
@@ -89,26 +84,18 @@ router.get('/pastEvents', (req, res, next) => {
 });
 
 router.get('/pollResults', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('pollResults');
 });
 
 router.get('/pollView', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('pollView');
 });
 
 router.get('/polls', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('polls');
 });
 
 router.get('/projectGallery', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('projectGallery');
 });
 
@@ -117,44 +104,30 @@ router.get('/registrationSettings', requiresAuth(), async (req, res, next) => {
 });
 
 router.get('/sponsor', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('sponsor');
 });
 
 router.get('/teamManagement', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('teamManagement');
 });
 
 router.get('/teamManager', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('teamManager');
 });
 
 router.get('/test', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('test');
 });
 
 router.get('/teamSettings', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('teamSettings');
 });
 
 router.get('/teamView', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('teamView');
 });
 
 router.get('/teams', requiresAuth(), async (req, res, next) => {
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
-
   res.status(200).render('teams');
 });
 
@@ -166,7 +139,6 @@ router.get('/userList', requiresAuth(), async (req, res, next) => {
     { name: "Kayla", role: "rol_Rtjhdoi7zz7wOjXX" },
     { name: "Ralph", role: "" }
   ];
-  res.locals.userInfo = await req.oidc.fetchUserInfo();
 
   res.status(200).render('userList', { users });
 });
