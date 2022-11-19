@@ -14,4 +14,8 @@ html
                 hr
 
         div
+          //  slap image form othe r pug
           p= isAuthenticated
+
+          if (userInfo)
+              img(src=userInfo['picture'] referrerpolicy="no-referrer")
