@@ -130,7 +130,7 @@ router.get('/teams', requiresAuth(), async (req, res, next) => {
   res.status(200).render('teams');
 });
 
-router.get('/userList', requiresAuth(), async (req, res, next) => {
+router.get('/roleManagement', requiresAuth(), async (req, res, next) => {
   const users = [
     { name: "Brady", role: "rol_Rtjhdoi7zz7wOjXX" },
     { name: "Derek", role: "" },
@@ -139,7 +139,11 @@ router.get('/userList', requiresAuth(), async (req, res, next) => {
     { name: "Ralph", role: "" }
   ];
 
-  res.status(200).render('userList', { users });
+  res.status(200).render('roleManagement', { users });
+});
+
+router.get('/userList', (req, res, next) => {
+  res.status(200).render('userList');
 });
 
 router.get('/welcomePage', (req, res, next) => {
