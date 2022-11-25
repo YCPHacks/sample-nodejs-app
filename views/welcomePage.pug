@@ -41,9 +41,10 @@ html
                                 table.table.table-striped
                                     tbody
                                         tr
-                                            +schedule('5:00 PM')
-                                            +schedule('Doors Open and Dinner')
-                                            +schedule('Check in')
+                                            +schedule("5:00")
+                                            +schedule("Doors Open and Dinner ")
+                                            +schedule("Check In")
+
                                         tr
                                             +schedule('6:30 PM')
                                             +schedule('Opening Ceremony')
@@ -53,16 +54,40 @@ html
                                             +schedule('Team Building')
                                             +schedule('Activity')
                                         tr
-                                            +schedule('8:00 PM')
-                                            +schedule('Idea Building')
-                                            +schedule('Check in')
+                                            +schedule('9:00 PM')
+                                            td
+                                                #accordionFlushExample1.accordion.accordion-flush
+                                                    .accordion-item
+                                                        h2#flush-headingOne1.accordion-header
+                                                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne1', aria-expanded='false', aria-controls='flush-collapseOne1')
+                                                                | Babcock - Test
+                                                        #flush-collapseOne1.accordion-collapse.collapse(aria-labelledby='flush-headingOne1', data-bs-parent='#accordionFlushExample1', style='')
+                                                            .accordion-body
+                                                                img.speaker(src='/static/images/derek.png')
+                                                                h3.py-1 Dr. Babcock
+                                                                p Information
+
+
+                                            +schedule('Speaker')
                                         tr
                                             +schedule('8:30 PM')
                                             +schedule('Git Workshop')
                                             +schedule('Workshop')
                                         tr
                                             +schedule('9:00 PM')
-                                            +schedule('Galin - Network Analyst')(class="speaker" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal")
+                                            td
+                                                #accordionFlushExample.accordion.accordion-flush
+                                                    .accordion-item
+                                                        h2#flush-headingOne.accordion-header
+                                                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
+                                                                | Galin - Network Analyst
+                                                        #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample', style='')
+                                                            .accordion-body
+                                                                img.speaker(src='/static/images/derek.png')
+                                                                h3.py-1 Mr. Derek
+                                                                p Information
+
+
                                             +schedule('Speaker')
                     |
                     #two.container.tab-pane.fade
