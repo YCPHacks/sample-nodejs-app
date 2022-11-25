@@ -6,7 +6,7 @@ const logger = require('morgan');
 const helmet = require('helmet');
 
 const indexRouter = require('./routes/index');
-const testRouter = require('./routes/test');
+// const testRouter = require('./routes/test');
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/static', express.static('public'));
 
 app.use('/', indexRouter);
-app.use('/', testRouter);
+// app.use('/', testRouter);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');

@@ -2,6 +2,9 @@ doctype html
 head
   title= title
 body
-  img(src=userInfo['picture'])
+  if (userInfo)
+    img(src=userInfo['picture'] referrerpolicy="no-referrer")
 
-  p= userInfo['picture']
+    each [key, value] of Object.entries(userInfo)
+      unless (key == 'picture')
+        div= `${key}: ${value}`

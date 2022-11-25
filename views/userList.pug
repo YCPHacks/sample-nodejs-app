@@ -1,22 +1,15 @@
-doctype html
-head
-  link(rel='icon', type='image/x-icon', href='/static/images/favicon.png')
-body
-  include includes/navbar.pug
-  include includes/dashboardBar.pug
+html
+  head
+    link(rel='icon', type='image/x-icon', href='/static/images/favicon.png')
+  body
+   include includes/navbar.pug
+   include includes/dashboardBar.pug
+           .display-5 User List
+               hr
+           //.container
+               //each user of users
+                   //img(src=user['picture'] referrerpolicy="no-referrer")
 
-      .display-5 User List
-        hr
-      .container
-        mixin user(u)
-          form
-            span= u.name
-
-            select(name=`${u.name}`)
-              option(value="user" selected=(u.role === "")) user
-              option(value="admin" selected=(u.role === "rol_Rtjhdoi7zz7wOjXX")) administrator
-
-          input(type="submit")
-
-      each u of users
-        +user(u)
+                   //each [key, value] of Object.entries(user)
+                       //unless (key == 'picture')
+                           //div= `${key}: ${value}`

@@ -6,6 +6,10 @@ html
         link(rel='stylesheet', type='text/css', href='/static/stylesheets/gallery.css')
     body
         include includes/navbar.pug
+
+        div
+          p= isAuthenticated
+
         .maximilion
             h1 Image Gallery
             .container
