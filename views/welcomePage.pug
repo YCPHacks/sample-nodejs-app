@@ -18,169 +18,174 @@ html
         #edit(contenteditable='false')
 
             h1.display-5.my-5 Schedule
-            // SCHEDULE
-            .schedule.container.p-2.mt-2.shadow-lg.rounded
-                ul.nav.nav-tabs.nav-justified
-                    li.nav-item
-                        a.scheduleLink.nav-link.active(data-bs-toggle='tab', href='#one') 1st day
-                    li.nav-item
-                        a.scheduleLink.nav-link(data-bs-toggle='tab', href='#two') 2nd day
-                    li.nav-item
-                        a.scheduleLink.nav-link(data-bs-toggle='tab', href='#three') 3rd day
-                // Tab panes
-                .tab-content
+                // SCHEDULE
+                .schedule.container.p-2.mt-2.shadow-lg.rounded
+                    ul.nav.nav-tabs.nav-justified
+                        li.nav-item
+                            a.scheduleLink.nav-link.active(data-bs-toggle='tab', href='#one') 1st day
+                        li.nav-item
+                            a.scheduleLink.nav-link(data-bs-toggle='tab', href='#two') 2nd day
+                        li.nav-item
+                            a.scheduleLink.nav-link(data-bs-toggle='tab', href='#three') 3rd day
+                    // Tab panes
+                    .tab-content
 
-                    mixin schedule(name,href)
-                        td: a()&attributes(attributes)= name
+                        mixin schedule(name,href)
+                            td: a()&attributes(attributes)= name
 
-                    #one.container.tab-pane.active
-                        br
-                        h3 Friday
-                        p
-                            .container.mt-3.overflow-auto
-                                table.table.table-striped
-                                    tbody
-                                        tr
-                                            +schedule("5:00")
-                                            +schedule("Doors Open and Dinner ")
-                                            +schedule("Check In")
+                        #one.container.tab-pane.active
+                            br
+                            h3 Friday
+                            p
+                                .container.mt-3.overflow-auto
+                                    table.table.table-striped
+                                        tbody
+                                            tr
+                                                +schedule("5:00")
+                                                +schedule("Doors Open and Dinner ")
+                                                +schedule("Check In")
 
-                                        tr
-                                            +schedule('6:30 PM')
-                                            +schedule('Opening Ceremony')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('7:30 PM')
-                                            +schedule('Team Building')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('9:00 PM')
-                                            td
-                                                #accordionFlushExample1.accordion.accordion-flush
-                                                    .accordion-item
-                                                        h2#flush-headingOne1.accordion-header
-                                                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne1', aria-expanded='false', aria-controls='flush-collapseOne1')
-                                                                | Babcock - Test
-                                                        #flush-collapseOne1.accordion-collapse.collapse(aria-labelledby='flush-headingOne1', data-bs-parent='#accordionFlushExample1', style='')
-                                                            .accordion-body
-                                                                img.speaker(src='/static/images/derek.png')
-                                                                h3.py-1 Dr. Babcock
-                                                                p Information
-
-
-                                            +schedule('Speaker')
-                                        tr
-                                            +schedule('8:30 PM')
-                                            +schedule('Git Workshop')
-                                            +schedule('Workshop')
-                                        tr
-                                            +schedule('9:00 PM')
-                                            td
-                                                #accordionFlushExample.accordion.accordion-flush
-                                                    .accordion-item
-                                                        h2#flush-headingOne.accordion-header
-                                                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
-                                                                | Galin - Network Analyst
-                                                        #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample', style='')
-                                                            .accordion-body
-                                                                img.speaker(src='/static/images/derek.png')
-                                                                h3.py-1 Mr. Derek
-                                                                p Information
+                                            tr
+                                                +schedule('6:30 PM')
+                                                +schedule('Opening Ceremony')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('7:30 PM')
+                                                +schedule('Team Building')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('9:00 PM')
+                                                td
+                                                    #accordionFlushExample1.accordion.accordion-flush
+                                                        .accordion-item
+                                                            h2#flush-headingOne1.accordion-header
+                                                                button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne1', aria-expanded='false', aria-controls='flush-collapseOne1')
+                                                                    | Babcock - Test
+                                                            #flush-collapseOne1.accordion-collapse.collapse(aria-labelledby='flush-headingOne1', data-bs-parent='#accordionFlushExample1', style='')
+                                                                .accordion-body
+                                                                    img.speaker(src='/static/images/derek.png')
+                                                                    h3.py-1 Dr. Babcock
+                                                                    p Information
 
 
-                                            +schedule('Speaker')
-                    |
-                    #two.container.tab-pane.fade
-                        br
+                                                +schedule('Speaker')
+                                            tr
+                                                +schedule('8:30 PM')
+                                                +schedule('Git Workshop')
+                                                +schedule('Workshop')
+                                            tr
+                                                +schedule('9:00 PM')
+                                                td
+                                                    #accordionFlushExample.accordion.accordion-flush
+                                                        .accordion-item
+                                                            h2#flush-headingOne.accordion-header
+                                                                button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
+                                                                    | Galin - Network Analyst
+                                                            #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample', style='')
+                                                                .accordion-body
+                                                                    img.speaker(src='/static/images/derek.png')
+                                                                    h3.py-1 Mr. Derek
+                                                                    p Information
+
+
+                                                +schedule('Speaker')
                         |
-                        h3 Saturday
-                        |
-                        p
-                            .container.mt-3
-                                table.table.table-striped
-                                    tbody
-                                        mixin schedule(name,href)
-                                            td: a()&attributes(attributes)= name
-                                        tr
-                                            +schedule('5:00 PM')
-                                            +schedule('Doors Open and Dinner')
-                                            +schedule('Check in')
-                                        tr
-                                            +schedule('6:30 PM')
-                                            +schedule('Opening Ceremony')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('7:30 PM')
-                                            +schedule('Team Building')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('8:00 PM')
-                                            +schedule('Idea Building')
-                                            +schedule('Check in')
-                                        tr
-                                            +schedule('8:30 PM')
-                                            +schedule('Git Workshop')
-                                            +schedule('Workshop')
-                                        tr
-                                            +schedule('9:00 PM')
-                                            +schedule('Galin - Network Analyst')(type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal")
-                                            +schedule('Speaker')
-                    |
-                    #three.container.tab-pane.fade
-                        br
-                        |
-                        h3 Sunday
-                        |
-                        p
-                            .container.mt-3
-                                table.table.table-striped
-                                    tbody
-                                        mixin schedule(name,href)
-                                            td: a()&attributes(attributes)= name
-                                        tr
-                                            +schedule('5:00 PM')
-                                            +schedule('Doors Open and Dinner')
-                                            +schedule('Check in')
-                                        tr
-                                            +schedule('6:30 PM')
-                                            +schedule('Opening Ceremony')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('7:30 PM')
-                                            +schedule('Team Building')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('8:00 PM')
-                                            +schedule('Idea Building')
-                                            +schedule('Check in')
-                                        tr
-                                            +schedule('8:30 PM')
-                                            +schedule('Git Workshop')
-                                            +schedule('Workshop')
-                                        tr
-                                            +schedule('9:00 PM')
-                                            +schedule('Galin - Network Analyst')(type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@speaker2")
-                                            +schedule('Speaker')
+                        #two.container.tab-pane.fade
+                            br
+                            |
+                            h3 Saturday
+                            |
+                            p
+                                .container.mt-3
+                                    table.table.table-striped
+                                        tbody
+                                            mixin schedule(name,href)
+                                                td: a()&attributes(attributes)= name
 
-                #exampleModal.modal.fade(tabindex='-1', aria-labelledby='exampleModalLabel', aria-hidden='true')
-                    .modal-dialog
-                        .modal-content
-                            .modal-header
-                                h1#exampleModalLabel.modal-title.fs-5 Speaker
-                                button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+                                            tr
+                                                +schedule('12:00 AM')
+                                                +schedule('Midnight Nerf War')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('2:00 AM')
+                                                +schedule('Trivia')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('8:30 AM')
+                                                +schedule('Breakfast')
+                                                +schedule('Food')
+                                            tr
+                                                +schedule('9:00 PM')
+                                                +schedule('Speaker')
+                                            tr
+                                                +schedule('Lunch')
+                                                +schedule('12:00 PM')
 
-                            .modal-body
-                                //form
-                                .mb-3
-                                    label.col-form-label(for='recipient-name') Recipient:
-                                    p#recipient-name.form-control
-                                        | Recipient Name
-                                .mb-3
-                                    label.col-form-label(for='message-text') About:
-                                    p#message-text.form-control
-                                        | About them
-                            .modal-footer
-                                button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close
+                                                +schedule('Workshop')
+                                            tr
+                                                +schedule('Meet the Students')
+                                                +schedule('1:00 PM')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('Dr. Babcock - AI / Ethic')
+                                                +schedule('3:00 PM')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('Kate Kenally - AI Workshop')
+                                                +schedule('4:00 PM')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('Dinner')
+                                                +schedule('7:00 PM')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('Dean Zeller - Fire ')
+                                                +schedule('8:30 PM')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('Slideshow Karaoke')
+                                                +schedule('9:30 PM')
+                                                +schedule('Activity')
+
+
+                        |
+                        #three.container.tab-pane.fade
+                            br
+                            |
+                            h3 Sunday
+                            |
+                            p
+                                .container.mt-3
+                                    table.table.table-striped
+                                        tbody
+                                            mixin schedule(name,href)
+                                                td: a()&attributes(attributes)= name
+                                            tr
+                                                +schedule('5:00 PM')
+                                                +schedule('Doors Open and Dinner')
+                                                +schedule('Check in')
+                                            tr
+                                                +schedule('6:30 PM')
+                                                +schedule('Opening Ceremony')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('7:30 PM')
+                                                +schedule('Team Building')
+                                                +schedule('Activity')
+                                            tr
+                                                +schedule('8:00 PM')
+                                                +schedule('Idea Building')
+                                                +schedule('Check in')
+                                            tr
+                                                +schedule('8:30 PM')
+                                                +schedule('Git Workshop')
+                                                +schedule('Workshop')
+                                            tr
+                                                +schedule('9:00 PM')
+                                                +schedule('Galin - Network Analyst')(type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@speaker2")
+                                                +schedule('Speaker')
+
+
             // END OF SCHEDULE
 
             h1.display-5 FAQ
