@@ -62,7 +62,17 @@ html
                                             +schedule('Workshop')
                                         tr
                                             +schedule('9:00 PM')
-                                            +schedule('Galin - Network Analyst')(class="speaker" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal")
+                                            td
+                                                #accordionFlushExample.accordion.accordion-flush
+                                                    .accordion-item
+                                                        h2#flush-headingOne.accordion-header
+                                                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
+                                                                | Galin - Network Analyst
+                                                        #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample', style='')
+                                                            .accordion-body
+                                                                img.speaker(src='/static/images/derek.png')
+                                                                h3.py-1 Mr. Derek
+                                                                p Information
                                             +schedule('Speaker')
                     |
                     #two.container.tab-pane.fade
