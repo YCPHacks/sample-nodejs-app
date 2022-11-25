@@ -137,27 +137,20 @@ h3{
 }
 
 /* Striped table with events */
-.accordion-item{
-    background-color: transparent !important;
+.table-striped{
+    color: white;
 }
-.accordion-button{
-    background-color: transparent !important;
-    width: 75% !important;
-}
-
-.accordion{
-    --bs-accordion-btn-padding-x: 0 !important;
+td{
+    color: black;
 }
 
-.accordion-button:not(.collapsed){
-    color: black !important;
+.container{
+    background: #cfe7cf;
+    border-radius:10px;
 }
-.accordion-button:focus{
-    border:none;
-}
-img.speaker{
-    width:100px;
-    height:auto;
+
+.nav-tabs{
+    background: #84c284;
 }
 
 /* ------SCROLL BAR------*/
