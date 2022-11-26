@@ -15,6 +15,9 @@ body, html {
 .account {
     padding: 1em;
 }
+svg.dashboard{
+    color:white;
+}
 
 svg {
     width: 40px;
