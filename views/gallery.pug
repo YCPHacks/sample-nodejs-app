@@ -7,22 +7,22 @@ html
     body
         include includes/navbar.pug
 
-        div
-          p= isAuthenticated
+        //div
+        //  p= isAuthenticated
 
         .maximilion
             h1 Image Gallery
             .container
                 .gallery-wrapper
-                    .img
+                    .img.gallery
                         img(src='/static/images/TeamFocused.png', alt='hacks_four')
-                    .img
+                    .img.gallery
                         img(src='/static/images/Presentation.png', alt='hacks_five')
-                    .img
+                    .img.gallery
                         img(src='/static/images/Drone.png', alt='hacks_six')
-                    .img
+                    .img.gallery
                         img(src='/static/images/Hardware.png', alt='hacks_one')
-                    .img
+                    .img.gallery
                         img(src='/static/images/TylerEating.png', alt='hacks_two')
-                    .img
+                    .img.gallery
                         img(src='/static/images/NerfWinners.png', alt='hacks_three')
