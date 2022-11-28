@@ -18,9 +18,9 @@ img.gallery:hover {
 	transform:scale(1.5);
 }
 
-.container-full {
-	background: #4EA764;
-}
+/*.container-full {*/
+/*	background: #4EA764;*/
+/*}*/
 
 .container {
     display: flex;
