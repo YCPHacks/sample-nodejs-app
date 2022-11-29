@@ -12,7 +12,6 @@ html
 
         h1.display-5 What is Hackathon?
             .container.lh-base.shadow
-                hr
                 p.fs-5.p-3 Conveniently nestled in the middle of rural Pennsylvania, YCP Hacks is a college level hackathon with small town charm. An hour north of Baltimore, an hour and a half from Philadelphia, and 2 hours from Penn State places it right in the middle of Pennsylvania Dutch Country (presumably made of Funnel Cake). The event is set on the charming York College of Pennsylvania campus, with all the facilities, people and camaraderie that comes with it. Our mission is to promote technical knowledge, innovation, and entrepreneurship in York and beyond, and we just can't wait to see what you do next.
 
         #edit(contenteditable='false')
@@ -38,42 +37,54 @@ html
                         h3 Friday
                         p
                             .container.mt-3.overflow-auto
-                                table.table.table-striped
-                                    tbody
-                                        tr
-                                            +schedule('5:00 PM')
-                                            +schedule('Doors Open and Dinner')
-                                            +schedule('Check in')
-                                        tr
-                                            +schedule('6:30 PM')
-                                            +schedule('Opening Ceremony')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('7:30 PM')
-                                            +schedule('Team Building')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('8:00 PM')
-                                            +schedule('Idea Building')
-                                            +schedule('Check in')
-                                        tr
-                                            +schedule('8:30 PM')
-                                            +schedule('Git Workshop')
-                                            +schedule('Workshop')
-                                        tr
-                                            +schedule('9:00 PM')
-                                            td
-                                                #accordionFlushExample.accordion.accordion-flush
-                                                    .accordion-item
-                                                        h2#flush-headingOne.accordion-header
-                                                            button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
-                                                                | Galin - Network Analyst
-                                                        #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample', style='')
-                                                            .accordion-body
-                                                                img.speaker(src='/static/images/derek.png')
-                                                                h3.py-1 Mr. Derek
-                                                                p Information
-                                            +schedule('Speaker')
+                                .container
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+
+
+                                    #accordionFlushExample.accordion.accordion-flush
+                                        .accordion-item
+                                            h2#flush-headingOne.accordion-header
+                                                button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
+                                                    .row
+                                                        .col 5:00
+
+                                                        //  hopefully this isnt a pain later on for editing
+                                                        a.col Speaker
+
+                                                        .col idk
+                                            #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample')
+                                                .accordion-body
+                                                    img.speaker(src='/static/images/derek.png')
+                                                    h3.py-1 Mr. Speaker
+                                                    hr
+                                                    p Information about speaker
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
                     |
                     #two.container.tab-pane.fade
                         br
