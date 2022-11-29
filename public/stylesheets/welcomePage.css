@@ -84,6 +84,7 @@ button.rightArrow{
     animation-iteration-count: infinite;
     /*animation-timing-function: linear;*/
     animation-direction: alternate;
+
 }
 
 .center:hover{
@@ -91,6 +92,7 @@ button.rightArrow{
     animation-timing-function: ease-in-out;
     cursor: pointer;
 }
+
 .sponsorImage {
     position:relative;
     display: inline-block;
@@ -131,7 +133,7 @@ h3{
 }
 
 .mt-3{
-    height: 400px;
+    height: 300px;
     overflow: auto;
 }
 
@@ -184,6 +186,7 @@ a.col{
 .accordion-button:focus{
     border:none;
 }
+
 img.speaker{
     width:100px;
     height:auto;

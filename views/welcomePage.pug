@@ -17,74 +17,74 @@ html
         #edit(contenteditable='false')
 
             h1.display-5.my-5 Schedule
-            // SCHEDULE
-            .schedule.container.p-2.mt-2.shadow-lg.rounded
-                ul.nav.nav-tabs.nav-justified
-                    li.nav-item
-                        a.scheduleLink.nav-link.active(data-bs-toggle='tab', href='#one') 1st day
-                    li.nav-item
-                        a.scheduleLink.nav-link(data-bs-toggle='tab', href='#two') 2nd day
-                    li.nav-item
-                        a.scheduleLink.nav-link(data-bs-toggle='tab', href='#three') 3rd day
-                // Tab panes
-                .tab-content
+                // SCHEDULE
+                .schedule.container.p-2.mt-2.shadow-lg.rounded
+                    ul.nav.nav-tabs.nav-justified
+                        li.nav-item
+                            a.scheduleLink.nav-link.active(data-bs-toggle='tab', href='#one') 1st day
+                        li.nav-item
+                            a.scheduleLink.nav-link(data-bs-toggle='tab', href='#two') 2nd day
+                        li.nav-item
+                            a.scheduleLink.nav-link(data-bs-toggle='tab', href='#three') 3rd day
+                    // Tab panes
+                    .tab-content
 
-                    mixin schedule(name,href)
-                        td: a()&attributes(attributes)= name
+                        mixin schedule(column)
+                            div.col= column
 
-                    #one.container.tab-pane.active
-                        br
-                        h3 Friday
-                        p
-                            .container.mt-3.overflow-auto
-                                .container
-                                    .row
-                                        +schedule('5:00')
-                                        +schedule('Check in')
-                                        +schedule('Check in')
+                        #one.container.tab-pane.active
+                            br
+                            h3 Friday
+                            p
+                                .container.mt-3.overflow-auto
+                                    .container
+                                        .row
+                                            +schedule('5:00')
+                                            +schedule('Check in')
+                                            +schedule('Check in')
 
 
-                                    #accordionFlushExample.accordion.accordion-flush
-                                        .accordion-item
-                                            h2#flush-headingOne.accordion-header
-                                                button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
-                                                    .row
-                                                        .col 5:00
+                                        #accordionFlushExample.accordion.accordion-flush
+                                            .accordion-item
+                                                h2#flush-headingOne.accordion-header
+                                                    button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
+                                                        .row
+                                                            .col 5:00
 
-                                                        //  hopefully this isnt a pain later on for editing
-                                                        a.col Speaker
+                                                            //  hopefully this isnt a pain later on for editing
+                                                            a.col Speaker
 
-                                                        .col idk
-                                            #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample')
-                                                .accordion-body
-                                                    img.speaker(src='/static/images/derek.png')
-                                                    h3.py-1 Mr. Speaker
-                                                    hr
-                                                    p Information about speaker
-                                    .row
-                                        +schedule('5:00')
-                                        +schedule('Check in')
-                                        +schedule('Check in')
-                                    .row
-                                        +schedule('5:00')
-                                        +schedule('Check in')
-                                        +schedule('Check in')
-                                    .row
-                                        +schedule('5:00')
-                                        +schedule('Check in')
-                                        +schedule('Check in')
-                                    .row
-                                        +schedule('5:00')
-                                        +schedule('Check in')
-                                        +schedule('Check in')
-                                    .row
-                                        +schedule('5:00')
-                                        +schedule('Check in')
-                                        +schedule('Check in')
-                                    .row
-                                        +schedule('5:00')
-                                        +schedule('Check in')
-                                        +schedule('Check in')
+                                                            .col idk
+                                                #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample')
+                                                    .accordion-body
+                                                        img.speaker(src='/static/images/derek.png')
+                                                        h3.py-1 Mr. Speaker
+                                                        hr
+                                                        p Information about speaker
+                                        .row
+                                            +schedule('5:00')
+                                            +schedule('Check in')
+                                            +schedule('Check in')
+                                        .row
+                                            +schedule('5:00')
+                                            +schedule('Check in')
+                                            +schedule('Check in')
+                                        .row
+                                            +schedule('5:00')
+                                            +schedule('Check in')
+                                            +schedule('Check in')
+                                        .row
+                                            +schedule('5:00')
+                                            +schedule('Check in')
+                                            +schedule('Check in')
+                                        .row
+                                            +schedule('5:00')
+                                            +schedule('Check in')
+                                            +schedule('Check in')
+                                        .row
+                                            +schedule('5:00')
+                                            +schedule('Check in')
+                                            +schedule('Check in')
                     |
                     #two.container.tab-pane.fade
                         br
