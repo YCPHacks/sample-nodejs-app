@@ -2,7 +2,6 @@
     position: relative;
     margin: auto;
     width: 75%;
-    height:55px;
     border: 0.5px solid;
     border-radius: 10px;
     background: rgba(213, 213, 210, 0.34);
@@ -36,6 +35,6 @@ img#output{
     margin-right: 1rem;
 }
 
-input.form-control{
+input.form-control.popup{
     margin-top: 1rem;
 }
