@@ -74,7 +74,6 @@ button.rightArrow{
 .center {
     margin: 0;
     position: absolute;
-    border:1px dotted;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -82,7 +81,6 @@ button.rightArrow{
     animation-name: slidein;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    /*animation-timing-function: linear;*/
     animation-direction: alternate;
 
 }
