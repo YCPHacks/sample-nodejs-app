@@ -35,8 +35,12 @@
     overflow: hidden;
     white-space: nowrap;
     border-radius:10px;
+}
 
-
+@media (max-width: 700px){
+    .carousel{
+        display: none;
+    }
 }
 
 button.leftArrow{
