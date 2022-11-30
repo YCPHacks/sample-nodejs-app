@@ -29,7 +29,7 @@
     padding-bottom: 100px;
     margin:auto;
     height: 200px;
-    width: 800px;
+    width: 1000px !important;
     position: relative;
     /*border:solid;*/
     overflow: hidden;
@@ -108,7 +108,7 @@ button.rightArrow{
 
 @keyframes slidein {
     0%   {left: 0px;}
-    100%  { left: -750px;}
+    100%  { left: -600px;}
 }
 
 .scheduleLink, td{
