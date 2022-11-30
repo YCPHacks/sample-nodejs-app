@@ -8,80 +8,65 @@ html
         link(rel='stylesheet', type='text/css', href='/static/stylesheets/dashboard.css')
 
     body
-    .space
-    .container-fluid
-        .dash.row.flex-nowrap
-            .col-auto.px-0
-                #sidebar.collapse.collapse-horizontal.show.border-end.bg-success
-                    #sidebar-nav.list-group.border-0.rounded-0.text-sm-start.min-vh-100
-                        a.dash.text-white.text-decoration-none.text-center.p-1.fs-3(href='/dashboard') DASHBOARD
-                        hr
-                        #accordionFlushExample.accordion.accordion-flush
-                            .accordion-item
-                                h2#flush-headingOne.accordion-header
-                                    button.accordion-button.collapsed.text-white.bg-success(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
-                                        | Your Team
-                                #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample')
-                                    .accordion-body.bg-success
-                                        .d-grid.gap-2
-                                            a.btn(href='/teamView') View Team
-                                            a.btn(href='/participantDashboard') Team Management
-                                            a.btn(href='/participantDashboard') Join Team
-                                            a.btn(href='/participantDashboard') Create Team
+    //.space
 
-                            .accordion-item
-                                h2#flush-headingThree.accordion-header
-                                    button.accordion-button.collapsed.text-white.bg-success(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseThree', aria-expanded='false', aria-controls='flush-collapseThree')
-                                        | Judging
-                                #flush-collapseThree.accordion-collapse.collapse(aria-labelledby='flush-headingThree', data-bs-parent='#accordionFlushExample')
-                                    .accordion-body.bg-success
-                                        .d-grid.gap-2
-                                            a.btn(href='/judgingCriteria') Judging Criteria
-                                            a.btn(href='/participantDashboard') Challenges
-                                            a.btn(href='/participantDashboard') Judging Results
+    #staticBackdrop.offcanvas.offcanvas-start(data-bs-backdrop='static', tabindex='-1', aria-labelledby='staticBackdropLabel')
+        .offcanvas-header.bg-success
+            h5#staticBackdropLabel.offcanvas-title Participant Dashboard
+            button.btn-close(type='button', data-bs-dismiss='offcanvas', aria-label='Close')
+        .offcanvas-body.bg-success
+            div
+                #accordionFlushExample.accordion.accordion-flush
+                    .accordion-item
+                        h2#flush-headingOne.accordion-header
+                            button.accordion-button.collapsed.text-white.bg-success(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
+                                svg.dashboard(xmlns='http://www.w3.org/2000/svg', width='16', height='16', viewbox='0 0 512 512')
+                                    path(d='M373.1 24.97C401.2-3.147 446.8-3.147 474.9 24.97L487 37.09C515.1 65.21 515.1 110.8 487 138.9L289.8 336.2C281.1 344.8 270.4 351.1 258.6 354.5L158.6 383.1C150.2 385.5 141.2 383.1 135 376.1C128.9 370.8 126.5 361.8 128.9 353.4L157.5 253.4C160.9 241.6 167.2 230.9 175.8 222.2L373.1 24.97zM440.1 58.91C431.6 49.54 416.4 49.54 407 58.91L377.9 88L424 134.1L453.1 104.1C462.5 95.6 462.5 80.4 453.1 71.03L440.1 58.91zM203.7 266.6L186.9 325.1L245.4 308.3C249.4 307.2 252.9 305.1 255.8 302.2L390.1 168L344 121.9L209.8 256.2C206.9 259.1 204.8 262.6 203.7 266.6zM200 64C213.3 64 224 74.75 224 88C224 101.3 213.3 112 200 112H88C65.91 112 48 129.9 48 152V424C48 446.1 65.91 464 88 464H360C382.1 464 400 446.1 400 424V312C400 298.7 410.7 288 424 288C437.3 288 448 298.7 448 312V424C448 472.6 408.6 512 360 512H88C39.4 512 0 472.6 0 424V152C0 103.4 39.4 64 88 64H200z')
+                                | Your Team
+                        #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample')
+                            .accordion-body.bg-success
+                                .d-grid.gap-2
+                                    a.btn(href='/teamView') View Team
+                                    a.btn(href='/participantDashboard') Team Management
+                                    a.btn(href='/participantDashboard') Join Team
+                                    a.btn(href='/participantDashboard') Create Team
+                    .accordion-item
+                        h2#flush-headingThree.accordion-header
+                            button.accordion-button.collapsed.text-white.bg-success(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseThree', aria-expanded='false', aria-controls='flush-collapseThree')
+                                svg.dashboard.bi.bi-people(xmlns='http://www.w3.org/2000/svg', width='16', height='16', fill='currentColor', viewbox='0 0 16 16')
+                                    path(d='M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z')
+                                | Judging
+                        #flush-collapseThree.accordion-collapse.collapse(aria-labelledby='flush-headingThree', data-bs-parent='#accordionFlushExample')
+                            .accordion-body.bg-success
+                                .d-grid.gap-2
+                                    a.btn(href='/judgingCriteria') Judging Criteria
+                                    a.btn(href='/participantDashboard') Challenges
+                                    a.btn(href='/participantDashboard') Judging Results
+                    .accordion-item
+                        h2#flush-headingTwo.accordion-header
+                            button.accordion-button.collapsed.text-white.bg-success(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseTwo', aria-expanded='false', aria-controls='flush-collapseTwo')
+                                svg.dashboard(xmlns='http://www.w3.org/2000/svg', width='16' height='16' viewbox='0 0 512 512')
+                                    path(d='M0 0H144l86.4 129.6c-42.2 5.2-80.5 23-111 49.6L0 0zM512 0L392.6 179.1c-30.5-26.6-68.8-44.4-111-49.6L368 0H512zM432 336c0 97.2-78.8 176-176 176s-176-78.8-176-176s78.8-176 176-176s176 78.8 176 176zM256 240l-29.7 57.2L160 306.3l48 44.5-11.3 62.8L256 384l59.3 29.7L304 350.8l48-44.5-66.3-9.2L256 240z')
+                                | Project Gallery
+                        #flush-collapseTwo.accordion-collapse.collapse(aria-labelledby='flush-headingTwo', data-bs-parent='#accordionFlushExample')
+                            .accordion-body.bg-success
+                                .d-grid.gap-2
+                                    a.btn(href='/projectGallery') View Projects
+                    .accordion-item
+                        h2#flush-headingFour.accordion-header
+                            button.accordion-button.collapsed.text-white.bg-success(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseFour', aria-expanded='false', aria-controls='flush-collapseThree')
+                                svg.dashboard.bi.bi-gear-wide(xmlns='http://www.w3.org/2000/svg', width='16', height='16', fill='currentColor', viewbox='0 0 16 16')
+                                    path(d='M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z')
+                                | Polls
+                        #flush-collapseFour.accordion-collapse.collapse(aria-labelledby='flush-headingFour', data-bs-parent='#accordionFlushExample')
+                            .accordion-body.bg-success
+                                .d-grid.gap-2
+                                    a.btn(href='/pollView') Take Polls
+                hr
 
-                            .accordion-item
-                                h2#flush-headingTwo.accordion-header
-                                    button.accordion-button.collapsed.text-white.bg-success(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseTwo', aria-expanded='false', aria-controls='flush-collapseTwo')
-                                        | Project Gallery
-                                #flush-collapseTwo.accordion-collapse.collapse(aria-labelledby='flush-headingTwo', data-bs-parent='#accordionFlushExample')
-                                    .accordion-body.bg-success
-                                        .d-grid.gap-2
-                                            a.btn(href='/projectGallery') View Projects
+    button.menu.btn-primary(type='button', data-bs-toggle='offcanvas', data-bs-target='#staticBackdrop', aria-controls='staticBackdrop')
+        svg.bi.bi-list(xmlns='http://www.w3.org/2000/svg', width='30', height='30', fill='currentColor', viewbox='0 0 16 16')
+            path(fill-rule='evenodd', d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z')
 
-                            .accordion-item
-                                h2#flush-headingFour.accordion-header
-                                    button.accordion-button.collapsed.text-white.bg-success(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseFour', aria-expanded='false', aria-controls='flush-collapseThree')
-                                        | Polls
-                                #flush-collapseFour.accordion-collapse.collapse(aria-labelledby='flush-headingFour', data-bs-parent='#accordionFlushExample')
-                                    .accordion-body.bg-success
-                                        .d-grid.gap-2
-                                            a.btn(href='/pollView') Take Polls
-                        hr
-                        .dropdown
-                            a.account.d-flex.align-items-center.text-white.text-decoration-none.dropdown-toggle(href='#', data-bs-toggle='dropdown', aria-expanded='false')
-                                img.rounded-circle.me-2(src='/static/images/derek.png', alt='', width='32', height='32')
-                                strong participant
-                            ul.dropdown-menu.dropdown-menu-light.text-small.shadow
-                                li
-                                    a.dropdown-item(href='#') Settings
-                                li
-                                    a.dropdown-item(href='#') Profile
-                                li
-                                    hr.dropdown-divider
-                                li
-                                    a.dropdown-item(href='/welcomePage') Sign out
-
-            main.col.ps-md-2.pt-2
-                a.p-1.text-decoration-none.text-black(href='#', data-bs-target='#sidebar', data-bs-toggle='collapse')
-                    svg.bi.bi-list(xmlns='http://www.w3.org/2000/svg', width='30', height='30', fill='currentColor', viewbox='0 0 16 16')
-                        path(fill-rule='evenodd', d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z')
-
-                .page-header.pt-3
-                    .article.totsPart.shadow-lg
-                //    h2 Bootstrap 5 Sidebar Menu - Simple
-                //p.lead A offcanvas &quot;push&quot; vertical nav menu example.
-                //hr
-                //.row
-                //    .col-12
-                //        p lil test hehee
+    .page-header.pt-3
+        .article.catPhotoParticipant.shadow-lg
