@@ -13,6 +13,10 @@ button{
     background: none;
 }
 
+.btn-primary{
+    margin-left: 10px;
+}
+
 button:hover{
     color:blue;
 }
