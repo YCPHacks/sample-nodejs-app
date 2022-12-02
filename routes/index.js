@@ -94,6 +94,11 @@ router.get('/polls', requiresAuth(), async (req, res, next) => {
   res.status(200).render('polls');
 });
 
+router.get('/registrationQuestions', requiresAuth(), async (req, res, next) => {
+  res.status(200).render('registrationQuestions');
+});
+
+
 router.get('/projectGallery', requiresAuth(), async (req, res, next) => {
   res.status(200).render('projectGallery');
 });
