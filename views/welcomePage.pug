@@ -40,7 +40,7 @@ html
                                 .container
                                     .row
                                         +schedule('5:00')
-                                        +schedule('Check in')
+                                        +schedule('Doors open and Dinner')
                                         +schedule('Check in')
 
 
@@ -49,13 +49,65 @@ html
                                             h2#flush-headingOne.accordion-header
                                                 button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne', aria-expanded='false', aria-controls='flush-collapseOne')
                                                     .row
-                                                        .col 5:00
+                                                        .col 6:30
 
                                                         //  hopefully this isnt a pain later on for editing
-                                                        a.col Speaker
+                                                        a.col Mr. Speaker
+
+                                                        .col Speaker
+                                            #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample')
+                                                .accordion-body
+                                                    img.speaker(src='/static/images/derek.png')
+                                                    h3.py-1 Mr. Speaker
+                                                    hr
+                                                    p Information about speaker
+                                    .row
+                                        +schedule('7:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('7:30')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('8:30')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('9:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('10:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+
+                    |
+                    #two.container.tab-pane.fade
+                        br
+                        |
+                        h3 Saturday
+                        |
+                        p
+                            .container.mt-3.overflow-auto
+                                .container
+                                    .row
+                                        +schedule('12:00 AM')
+                                        +schedule('Midnight Nerf War')
+                                        +schedule('Activity')
+
+                                    #accordionFlushExample2.accordion.accordion-flush
+                                        .accordion-item
+                                            h2#flush-headingOne2.accordion-header
+                                                button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne2', aria-expanded='false', aria-controls='flush-collapseOne2')
+                                                    .row
+                                                        .col 7:30 AM
+
+                                                        //  hopefully this isnt a pain later on for editing
+                                                        a.col Ms. Speaker
 
                                                         .col idk
-                                            #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne', data-bs-parent='#accordionFlushExample')
+                                            #flush-collapseOne2.accordion-collapse.collapse(aria-labelledby='flush-headingOne2', data-bs-parent='#accordionFlushExample2')
                                                 .accordion-body
                                                     img.speaker(src='/static/images/derek.png')
                                                     h3.py-1 Mr. Speaker
@@ -86,66 +138,6 @@ html
                                         +schedule('Check in')
                                         +schedule('Check in')
 
-
-                    |
-                    #two.container.tab-pane.fade
-                        br
-                        |
-                        h3 Saturday
-                        |
-                        p
-                            .container.mt-3
-                                table.table.table-striped
-                                    tbody
-                                        mixin schedule(name,href)
-                                            td: a()&attributes(attributes)= name
-
-                                        tr
-                                            +schedule('12:00 AM')
-                                            +schedule('Midnight Nerf War')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('2:00 AM')
-                                            +schedule('Trivia')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('8:30 AM')
-                                            +schedule('Breakfast')
-                                            +schedule('Food')
-                                        tr
-                                            +schedule('9:00 PM')
-                                            +schedule('Speaker')
-                                        tr
-                                            +schedule('Lunch')
-                                            +schedule('12:00 PM')
-
-                                            +schedule('Workshop')
-                                        tr
-                                            +schedule('Meet the Students')
-                                            +schedule('1:00 PM')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('Dr. Babcock - AI / Ethic')
-                                            +schedule('3:00 PM')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('Kate Kenally - AI Workshop')
-                                            +schedule('4:00 PM')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('Dinner')
-                                            +schedule('7:00 PM')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('Dean Zeller - Fire ')
-                                            +schedule('8:30 PM')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('Slideshow Karaoke')
-                                            +schedule('9:30 PM')
-                                            +schedule('Activity')
-
-
                     |
                     #three.container.tab-pane.fade
                         br
@@ -153,55 +145,54 @@ html
                         h3 Sunday
                         |
                         p
-                            .container.mt-3
-                                table.table.table-striped
-                                    tbody
-                                        mixin schedule(name,href)
-                                            td: a()&attributes(attributes)= name
-                                        tr
-                                            +schedule('5:00 PM')
-                                            +schedule('Doors Open and Dinner')
-                                            +schedule('Check in')
-                                        tr
-                                            +schedule('6:30 PM')
-                                            +schedule('Opening Ceremony')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('7:30 PM')
-                                            +schedule('Team Building')
-                                            +schedule('Activity')
-                                        tr
-                                            +schedule('8:00 PM')
-                                            +schedule('Idea Building')
-                                            +schedule('Check in')
-                                        tr
-                                            +schedule('8:30 PM')
-                                            +schedule('Git Workshop')
-                                            +schedule('Workshop')
-                                        tr
-                                            +schedule('9:00 PM')
-                                            +schedule('Galin - Network Analyst')(type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@speaker2")
-                                            +schedule('Speaker')
+                            .container.mt-3.overflow-auto
+                                .container
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
 
-                //#exampleModal.modal.fade(tabindex='-1', aria-labelledby='exampleModalLabel', aria-hidden='true')
-                //    .modal-dialog
-                //        .modal-content
-                //            .modal-header
-                //                h1#exampleModalLabel.modal-title.fs-5 Speaker
-                //                button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
-                //
-                //            .modal-body
-                //                //form
-                //                .mb-3
-                //                    label.col-form-label(for='recipient-name') Recipient:
-                //                    p#recipient-name.form-control
-                //                        | Recipient Name
-                //                .mb-3
-                //                    label.col-form-label(for='message-text') About:
-                //                    p#message-text.form-control
-                //                        | About them
-                //            .modal-footer
-                //                button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close
+                                    #accordionFlushExample3.accordion.accordion-flush
+                                        .accordion-item
+                                            h2#flush-headingOne3.accordion-header
+                                                button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#flush-collapseOne3', aria-expanded='false', aria-controls='flush-collapseOne3')
+                                                    .row
+                                                        .col 5:00
+
+                                                        //  hopefully this isnt a pain later on for editing
+                                                        a.col Speaker
+
+                                                        .col idk
+                                            #flush-collapseOne3.accordion-collapse.collapse(aria-labelledby='flush-headingOne3', data-bs-parent='#accordionFlushExample3')
+                                                .accordion-body
+                                                    img.speaker(src='/static/images/derek.png')
+                                                    h3.py-1 Mr. Speaker
+                                                    hr
+                                                    p Information about speaker
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
+                                    .row
+                                        +schedule('5:00')
+                                        +schedule('Check in')
+                                        +schedule('Check in')
             // END OF SCHEDULE
 
             h1.display-5.my-5 FAQ
